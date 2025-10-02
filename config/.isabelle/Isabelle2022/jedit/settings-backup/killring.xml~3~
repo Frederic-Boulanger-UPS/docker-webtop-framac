@@ -1,0 +1,9 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<!DOCTYPE KILLRING SYSTEM "killring.dtd">
+<KILLRING>
+<ENTRY>i</ENTRY>
+<ENTRY>comd</ENTRY>
+<ENTRY>divides_d</ENTRY>
+<ENTRY> by auto</ENTRY>
+<ENTRY>sl</ENTRY>
+</KILLRING>

@@ -1,0 +1,21 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<!DOCTYPE KILLRING SYSTEM "killring.dtd">
+<KILLRING>
+<ENTRY>  unfolding comdiv_def divides_def
+</ENTRY>
+<ENTRY>  by (metis diff_add_cancel diff_diff_eq2 diff_zero divides_def left_diff_distrib mult_zero_left)
+</ENTRY>
+<ENTRY>comdiv_def </ENTRY>
+<ENTRY> assms</ENTRY>
+<ENTRY> sledgehammer</ENTRY>
+<ENTRY>sl</ENTRY>
+<ENTRY> by auto</ENTRY>
+<ENTRY>divides_d</ENTRY>
+<ENTRY>comd</ENTRY>
+<ENTRY>i</ENTRY>
+<ENTRY>un</ENTRY>
+<ENTRY>greater_div_def</ENTRY>
+<ENTRY>etaer</ENTRY>
+<ENTRY>algebra</ENTRY>
+<ENTRY>by metis</ENTRY>
+</KILLRING>

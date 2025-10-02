@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"https://www.why3.org/why3session.dtd">
+<why3session shape_version="6">
+<prover id="0" name="Isabelle" version="2022" timelimit="0" steplimit="0" memlimit="0"/>
+<prover id="1" name="Alt-Ergo" version="2.6.0" timelimit="5" steplimit="0" memlimit="1000"/>
+<file format="micro-C" proved="true">
+<path name=".."/><path name="pgcd.c"/>
+<theory name="Pgcd" proved="true">
+ <goal name="gcd_self" proved="true">
+ <proof prover="1"><result status="valid" time="0.017950" steps="39"/></proof>
+ </goal>
+ <goal name="comdiv_comm" proved="true">
+ <proof prover="1"><result status="valid" time="0.015531" steps="4"/></proof>
+ </goal>
+ <goal name="comdiv_ab" proved="true">
+ <proof prover="0"><path name="pgcd_Pgcd_comdiv_ab_1.xml"/><result status="valid" time="5.098903"/></proof>
+ </goal>
+ <goal name="comdiv_ba" proved="true">
+ <proof prover="1"><result status="valid" time="0.012199" steps="18"/></proof>
+ </goal>
+ <goal name="gcd_comm" proved="true">
+ <proof prover="1"><result status="valid" time="0.012354" steps="70"/></proof>
+ </goal>
+ <goal name="gcd_ab" proved="true">
+ <proof prover="0"><path name="pgcd_Pgcd_gcd_ab_1.xml"/><result status="valid" time="18.519868"/></proof>
+ </goal>
+ <goal name="gcd_ba" proved="true">
+ <proof prover="1"><result status="valid" time="0.010464" steps="17"/></proof>
+ </goal>
+ <goal name="pgcd&#39;vc" expl="VC for pgcd" proved="true">
+ <proof prover="1"><result status="valid" time="0.012665" steps="46"/></proof>
+ </goal>
+</theory>
+</file>
+</why3session>

@@ -1,0 +1,11 @@
+theory pgcd_Pgcd_gcd_ab_1
+imports Why3.Why3
+begin
+
+why3_open "pgcd_Pgcd_gcd_ab_1.xml"
+
+why3_vc gcd_ab
+
+why3_end
+
+end

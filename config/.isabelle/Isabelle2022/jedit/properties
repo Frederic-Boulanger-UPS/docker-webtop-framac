@@ -1,0 +1,34 @@
+#jEdit properties
+#Thu Oct 02 18:49:14 CEST 2025
+Combined\ Options.x=50
+Combined\ Options.y=50
+Global\ Options.last=textarea
+Global\ Options.splitter=208
+closeAllConfirm=false
+hideOpen=true
+keymap.current=imported
+lang.current=en
+migration.step.checkFileStatus=true
+navigator.scope=1
+optional.last.tab=0
+restore.splits=true
+search.beanshell.toggle=false
+search.ignoreCase.toggle=false
+search.regexp.toggle=false
+search.wholeWord.toggle=false
+search.wrap.toggle=false
+view.bgColor=\#ffffffff
+view.caretColor=\#ffff0000
+view.eolMarkerColor=\#ffff6633
+view.fgColor=\#ff000000
+view.fontsize=12
+view.lineHighlightColor=\#ffffffe0
+view.multipleSelectionColor=\#ffccffcc
+view.pageBreaksColor=\#ff8080ff
+view.selectionColor=\#ffccccff
+view.selectionFg=false
+view.selectionFgColor=\#ff000000
+view.structureHighlightColor=\#ff000000
+view.wrapGuideColor=\#ff8080ff
+view.x=0
+view.y=35

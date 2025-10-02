@@ -1,0 +1,59 @@
+# Base webtop image
+ARG BASEIMAGE
+FROM ${BASEIMAGE}
+
+# For which architecture to build (amd64 or arm64)
+ARG arch
+
+ENV HOME="/config"
+ENV TZ=Europe/Paris
+ARG DEBIAN_FRONTEND=noninteractive
+# Fix spurious accessibility bus error messages
+ENV NO_AT_BRIDGE=1
+
+RUN \
+	apt-get update ; \
+	apt-get upgrade -y ; \
+	apt-get install -y \
+		opam \
+		autoconf \
+		graphviz \
+		yaru-theme-icon \
+		adwaita-icon-theme-full \
+		at-spi2-core \
+		libcairo2-dev \
+		libexpat1-dev \
+		libgmp-dev \
+		libgtk-3-dev \
+		libgtksourceview-3.0-dev \
+		pkg-config
+
+RUN \
+	mkdir /opt/opam ; \
+	opam init --root=/opt/opam --yes ; \
+	eval $(opam env --root=/opt/opam) ; \
+	export OPAMROOT=/opt/opam ; \
+	opam install -y frama-c.31.0 frama-c-metacsl.0.9~beta
+ 
+RUN mkdir -p /init-config/init
+
+COPY init-config-frama-c/init/* /init-config/init/
+
+RUN \
+	cd /init-config/init ; \
+	for script in *.sh ; \
+	do \
+		chmod +x $script ; \
+		./$script ; \
+	done ; \
+	cd .. ; rm -r init
+
+# Clean up
+RUN apt-get autoremove && apt-get autoclean && apt-get clean ; \
+		rm -rf \
+    /tmp/* \
+    /config/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/*
+
+ENTRYPOINT ["/bin/bash", "/usr/local/lib/wrapper_script.sh"]

@@ -1,0 +1,81 @@
+# For which architecture to build (amd64 or arm64)
+ARG arch
+
+FROM lscr.io/linuxserver/webtop:ubuntu-xfce
+
+ENV HOME="/config"
+ENV TZ=Europe/Paris
+ENV LIBGL_ALWAYS_SOFTWARE=1
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Update apt base
+RUN \
+	apt-get update ; \
+	apt-get upgrade -y ;
+
+# Infrastructure
+RUN \
+	apt-get install -y \
+		yaru-theme-icon \
+		adwaita-icon-theme-full \
+		at-spi2-core \
+		mesa-utils \
+		libgl1-mesa-dri \
+		libwebkit2gtk-4.1-0
+
+# Basic tools
+RUN \
+	apt-get install -y \
+		nano \
+		zip \
+		unzip \
+		firefox
+
+# Basic dev stuff
+RUN \
+	apt-get install -y \
+		make \
+		g++ \
+		git \
+		libncurses-dev \
+		zlib1g-dev \
+		libsqlite3-dev \
+		sqlite3 \
+		python3-tk
+
+RUN \
+	apt-get autoremove ; \
+	apt-get autoclean ; \
+	apt-get clean ; \
+	rm -rf \
+    /tmp/* \
+    /config/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/*
+
+COPY mydocker_startup/wrapper_script.sh /usr/local/lib/wrapper_script.sh
+
+COPY init-config-base/fs/* /init-config/
+COPY init-config-base/init/* /init-config/init/
+COPY init-config-base/bin/killsession.py /usr/bin/xfce4-session-logout
+COPY init-config-base/xfce-app/* /init-config/.local/share/applications/
+
+RUN \
+	cd /init-config/init ; \
+	for script in *.sh ; \
+	do \
+		chmod +x $script ; \
+		./$script ; \
+	done ; \
+	cd .. ; rm -r init
+
+# Clean up
+RUN apt-get autoremove && apt-get autoclean && apt-get clean ; \
+		rm -rf \
+    /tmp/* \
+    /config/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/*
+
+ENTRYPOINT ["/bin/bash", "/usr/local/lib/wrapper_script.sh"]

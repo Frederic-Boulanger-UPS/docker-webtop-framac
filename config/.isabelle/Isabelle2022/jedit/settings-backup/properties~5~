@@ -1,0 +1,10 @@
+#jEdit properties
+#Thu Oct 02 11:06:06 CEST 2025
+keymap.current=imported
+migration.step.checkFileStatus=true
+navigator.scope=1
+search.beanshell.toggle=false
+search.ignoreCase.toggle=false
+search.regexp.toggle=false
+search.wholeWord.toggle=false
+search.wrap.toggle=false

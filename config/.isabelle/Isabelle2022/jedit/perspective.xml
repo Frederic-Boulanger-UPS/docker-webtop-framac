@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE PERSPECTIVE SYSTEM "perspective.dtd">
+<PERSPECTIVE>
+<BUFFER AUTORELOAD="TRUE" AUTORELOAD_DIALOG="FALSE" UNTITLED="FALSE">/config/test-why3/pgcd/pgcd_Pgcd_gcd_ab_1.thy</BUFFER>
+<VIEW PLAIN="FALSE">
+
+<TITLE>​Isabelle2022/Why3 - </TITLE>
+<PANES>
+"/config/test-why3/pgcd/pgcd_Pgcd_gcd_ab_1.thy" buffer "/config/test-why3/pgcd/pgcd_Pgcd_gcd_ab_1.thy" buff "global" bufferset
+</PANES>
+<GEOMETRY X="0" Y="35" WIDTH="1200" HEIGHT="850" EXT_STATE="0" />
+</VIEW>
+</PERSPECTIVE>

@@ -1,0 +1,18 @@
+[action]
+exit
+save
+backspace
+isabelle.newline
+insert-tab-indent
+paste
+next-line
+cut
+select-next-line
+next-char
+prev-char
+prev-line
+select-next-char
+global-options
+isabelle.complete
+[clipboard]
+  unfolding comdiv_def divides_def\n
